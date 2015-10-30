@@ -1,5 +1,5 @@
 # sportsbracket assignment
-On this issignment you may find a generic directive "sports-bracket".When called, the directive displays the games, teams and kickoff.
+On this assignment you may find a generic directive "sports-bracket".When called, the directive displays the games, teams and kickoff.
 ## Build & development
 
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
