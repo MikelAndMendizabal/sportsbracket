@@ -1,1 +1,36 @@
+<!doctype html>
+<html>
+<body ng-controller="MainCtrl">
+	<h1>Knockout</h1>
+	<!-- Tree display of the JSON file, going into every child element -->
+<ul class="knockout" ng-repeat="team in knockoutObject">       
+              <li  id="th">{{ team.teamHome }}</li>
+              <li id="ta">{{ team.teamAway }}</li>
+              <li id="date">{{ team.kickoff | date }}</li>
+              
+              <ul ng-repeat="child in team.children">
+        		<li id="th">{{ child.teamHome }}</li>
+               <li id="ta">{{ child.teamAway }}</li>
+               <li id="date">{{ child.kickoff | date }}</li>
+    		 		
+    		 		<ul ng-repeat="subchild in child.children">
+        				<li id="th">{{ subchild.teamHome }}</li>
+               			<li id="ta">{{ subchild.teamAway }}</li>
+               			<li id="date">{{ subchild.kickoff | date }}</li>
+ 						   
+ 						   <ul ng-repeat="subchild_1 in subchild.children">
+        				     <li id="th">{{ subchild_1.teamHome }}</li>
+               			     <li id="ta">{{ subchild_1.teamAway }}</li>
+               			     <li id="date">{{ subchild_1.kickoff | date }}</li>
+ 								
+ 								<ul ng-repeat="subchild_2 in subchild_1.children">
+        				     		<li id="th">{{ subchild_2.teamHome.name }}</li>
+               			     		<li id="ta">{{ subchild_2.teamAway.name }}</li>
+               			     		<li id="date">{{ subchild_2.kickoff | date }}</li>
+    		 		      		</ul>   		 		      
+    		 		      </ul>   		 		
+    		 		</ul>
+    		 </ul> 
+</ul>
 
+</body>

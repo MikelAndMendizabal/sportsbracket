@@ -8,11 +8,17 @@
  */
 angular.module('sportsbracketApp')
   .directive('sportsBracket', function () {
-    return {
-      template: '<div></div>',
+     return {
+      templateUrl: 'views/main.html',
       restrict: 'E',
-      link: function postLink(scope, element, attrs) {
-        element.text('this is the sportsBracket directive');
+      scope: {knockoutObject: '=bracket' },
+      controller: function($scope, $http){
+      $http.get('https://api.myjson.com/bins/36fo6').success(function(result){
+              $scope.knockoutObject= result;
+         });
+    },
+      link: function (scope, element, attrs) {
+       
       }
     };
   });
